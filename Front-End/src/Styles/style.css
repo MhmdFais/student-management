@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-font:  "Montserrat", sans-serif;
+    --header-footer-bg: #cbd5e1;
+}
+
+body{
+    font-family: var(--main-font);
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ==== LOGIN HEADER ==== */
+
+.header-container{
+    display: flex;
+    background-color: var(--header-footer-bg);
+}
+
+.login-header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    height: 6vh;
+}
+
+/* ==== LOGIN BODY ==== */
+
+.login-main-body{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 88vh;
+}
+
+.left-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
+}
+
+.right-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form{
+    padding: 2rem;
+    border: 1px solid black;
+    border-radius: 2rem;
+}
+
+.login-form input{
+    margin: 1rem 0;
+    padding: 1rem;
+    font-size: clamp(1rem, 1.4vw, 1.5rem);
+}
+
+.login-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    padding: 0.8rem 2rem;
+    font-size: clamp(1rem, 1vw, 1rem);
+    background-color: var(--header-footer-bg);
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+/* ==== FOOTER ==== */
+
+.footer-container{
+    display: flex;
+    justify-content: center;
+    background-color: var(--header-footer-bg);
+    height: 6vh;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
