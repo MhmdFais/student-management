@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KDU-FOC|SMS|Home</title>
-    <link rel="stylesheet" href="../../Styles/home.css" />
+    <title>KDU-FOC|SMS|Add</title>
+    <link rel="stylesheet" href="../../Styles/add.css" />
     <link rel="stylesheet" href="../../Styles/style.css" />
     <link
       rel="stylesheet"
@@ -41,7 +41,7 @@
       </div>
     </header>
     <main>
-      <div class="home-main-body">
+      <div class="add-student-main-body">
         <div class="side-bar">
           <div class="side-bar-content">
             <ul>
@@ -76,21 +76,70 @@
             </ul>
           </div>
         </div>
-        <div class="content-body">
-          <div class="upper-content">
-            <div class="student-text">
-              <h2>Students</h2>
-            </div>
-            <div class="filter-box">
-              <div class="filter-text">
-                <p>Filter</p>
-              </div>
-              <div class="arrow">
-                <i class="fa fa-angle-down" aria-hidden="true"></i>
-              </div>
-            </div>
+        <div class="add-student-content">
+          <div class="add-student-heading">
+            <h2>Add Student</h2>
           </div>
-          <div class="lower-content"></div>
+          <div class="add-student-form">
+            <form method="">
+              <div class="first-name">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" />
+              </div>
+              <div class="last-name">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" />
+              </div>
+              <div class="phone-no">
+                <label for="phone-no">Phone number</label>
+                <input type="number" id="phone-no" name="phone-no" />
+              </div>
+              <div class="address">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" />
+              </div>
+              <div class="birth-day">
+                <label for="birth-day">Birth Day</label>
+                <input type="date" id="birth-day" name="birth-day" />
+              </div>
+              <div class="id-no">
+                <label for="id-no">ID Number</label>
+                <input type="number" id="id-no" name="id-no" />
+              </div>
+              <div class="gender">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <div class="degree">
+                <label for="degree">Degree</label>
+                <select id="degree" name="degree">
+                  <option value="bse">
+                    BSc.(Hons.) in Software Engineering
+                  </option>
+                  <option value="bcs">BSc.(Hons.) in Computer Science</option>
+                  <option value="bce">
+                    BSc.(Hons.) in Computer Engineering
+                  </option>
+                </select>
+              </div>
+              <div class="year">
+                <label for="year">Year</label>
+                <select id="year" name="year">
+                  <option value="1">1st Year</option>
+                  <option value="2">2nd Year</option>
+                  <option value="3">3rd Year</option>
+                  <option value="4">4th Year</option>
+                </select>
+              </div>
+              <div class="course-list"></div>
+              <div class="add-student-button">
+                <button type="submit">Add Student</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </main>
