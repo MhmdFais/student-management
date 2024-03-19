@@ -1,0 +1,21 @@
+
+
+/* ==== HEADER ==== */
+.profile,
+.second-set{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-pic i{
+    font-size: clamp(1.5rem, 2vw, 3rem);
+}
+
+/* ==== BODY ==== */
+
+.home-main-body{
+    height: 88vh;
+}

@@ -23,7 +23,7 @@ body{
     background-color: var(--header-footer-bg);
 }
 
-.login-header-content{
+.header-content{
     display: flex;
     justify-content: space-between;
     align-items: center;
