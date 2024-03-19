@@ -1,4 +1,9 @@
-
+:root{
+    --nav-bar-bg:#e2e8f0;
+    --nav-non-active: #f1f5f9;
+    --nav-active: white;
+    --main-font:  "Montserrat", sans-serif;
+}
 
 /* ==== HEADER ==== */
 .profile,
@@ -18,4 +23,67 @@
 
 .home-main-body{
     height: 88vh;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vh;
+    background-color: var(--nav-bar-bg);
+}
+
+.side-bar-content ul li{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.65rem;
+    font-size: clamp(0,5rem, 1.2vw, 1.5rem);
+    cursor: pointer;
+    border: 1px solid rgb(146, 145, 145);
+    background-color: var(--nav-non-active);
+    font-family: var(--main-font);
+}
+
+.side-bar-content ul li:hover,
+.side-bar-content ul li.active{
+    background-color: var(--nav-active);
+}
+
+.side-bar-content ul li i{
+    margin-right: 0.7rem;
+}
+
+.side-bar-content .fa-graduation-cap{
+    margin-right: 0.5rem;
+}
+
+.content-body{
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+}
+
+.upper-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3vh 2vw;
+    align-items: center;
+}
+
+.student-text h3{
+    font-family: var(--main-font);
+}
+
+.filter-box{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+}
+
+.filter-text p{
+    font-family: var(--main-font);
 }
