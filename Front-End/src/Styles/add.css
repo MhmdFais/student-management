@@ -1,7 +1,7 @@
 :root{
     --nav-bar-bg:#e2e8f0;
     --nav-non-active: #f1f5f9;
-    --nav-active: white;
+    --nav-active: rgb(193, 190, 190);
     --main-font:  "Montserrat", sans-serif;
 }
 
@@ -108,6 +108,10 @@ a:visited {
     cursor: pointer;
     background-color: var(--nav-non-active);
     border: 1px solid rgb(146, 145, 145);
+}
+
+.add-student-form button:hover{
+    background-color: var(--nav-active);
 }
 
 .add-student-button{
