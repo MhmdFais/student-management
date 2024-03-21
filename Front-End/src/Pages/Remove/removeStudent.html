@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KDU-FOC|SMS|Home</title>
+    <!-- <link rel="stylesheet" href="../../Styles/home.css" /> -->
+    <link rel="stylesheet" href="../../Styles/style.css" />
+    <link rel="stylesheet" href="../../Styles/remove.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="header-content">
+          <div class="depratment">
+            <h3>Student Management System - KDU</h3>
+          </div>
+          <div class="profile">
+            <div class="profile-pic">
+              <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            </div>
+            <div class="second-set">
+              <div class="login-text">
+                <p>Login</p>
+              </div>
+              <div class="down-arrow">
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="remove-student-main-body">
+        <div class="side-bar">
+          <div class="side-bar-content">
+            <ul>
+              <a href="../Home/home.html">
+                <li id="home">
+                  <i class="fa fa-graduation-cap" aria-hidden="true"></i
+                  >Students
+                </li>
+              </a>
+              <a href="../Add/addStudent.html">
+                <li id="add-student">
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i>Add
+                  Student
+                </li>
+              </a>
+              <a href="../Remove/removeStudent.html">
+                <li id="remove-student">
+                  <i class="fa fa-minus-circle" aria-hidden="true"></i>Remove
+                  Student
+                </li>
+              </a>
+              <a href="../Update/updateStudent.html">
+                <li id="update-student">
+                  <i class="fa fa-refresh" aria-hidden="true"></i>Update Student
+                </li>
+              </a>
+              <a href="../View/viewStudent.html">
+                <li id="view-student">
+                  <i class="fa fa-eye" aria-hidden="true"></i>View Student
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+        <div class="remove-student-content">
+          <div class="remove-student-heading">
+            <h2>Remove Student</h2>
+          </div>
+          <div class="remove-student-form">
+            <form action="">
+              <div class="registration-no form-div">
+                <label for="reg-no">Registration Number</label>
+                <input type="text" id="reg-no" name="reg-no" placeholder="" />
+              </div>
+              <div class="delete-btn">
+                <button type="submit">Delete</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-content">
+          <h4>
+            Copy Right &copy; 2024 | General Sir John Kotelawala Defence
+            University
+          </h4>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
