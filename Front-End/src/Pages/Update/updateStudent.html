@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KDU-FOC|SMS|Update</title>
+    <link rel="stylesheet" href="../../Styles/update.css" />
+    <link rel="stylesheet" href="../../Styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="header-content">
+          <div class="depratment">
+            <h3>Student Management System - KDU</h3>
+          </div>
+          <div class="profile">
+            <div class="profile-pic">
+              <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            </div>
+            <div class="second-set">
+              <div class="login-text">
+                <p>Login</p>
+              </div>
+              <div class="down-arrow">
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="update-student-main-body">
+        <div class="side-bar">
+          <div class="side-bar-content">
+            <ul>
+              <a href="../Home/home.html">
+                <li id="home">
+                  <i class="fa fa-graduation-cap" aria-hidden="true"></i
+                  >Students
+                </li>
+              </a>
+              <a href="../Add/addStudent.html">
+                <li id="add-student">
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i>Add
+                  Student
+                </li>
+              </a>
+              <a href="../Remove/removeStudent.html">
+                <li id="remove-student">
+                  <i class="fa fa-minus-circle" aria-hidden="true"></i>Remove
+                  Student
+                </li>
+              </a>
+              <a href="../Update/updateStudent.html">
+                <li id="update-student">
+                  <i class="fa fa-refresh" aria-hidden="true"></i>Update Student
+                </li>
+              </a>
+              <a href="../View/viewStudent.html">
+                <li id="view-student">
+                  <i class="fa fa-eye" aria-hidden="true"></i>View Student
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+        <div class="update-student-content">
+          <div class="update-student-heading">
+            <h2>Update Student</h2>
+          </div>
+          <div class="update-student-form">
+            <form method="">
+              <div class="reg-no-search">
+                <label for="reg-no">Registration Number</label>
+                <input type="text" id="reg-no" name="reg-no" />
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </div>
+              <div class="first-name form-div">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" />
+              </div>
+              <div class="last-name form-div">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" />
+              </div>
+              <div class="phone-no form-div">
+                <label for="phone-no">Phone number</label>
+                <input type="number" id="phone-no" name="phone-no" />
+              </div>
+              <div class="address form-div">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" />
+              </div>
+              <div class="birth-day form-div">
+                <label for="birth-day">Birth Day</label>
+                <input type="date" id="birth-day" name="birth-day" />
+              </div>
+              <div class="id-no form-div">
+                <label for="id-no">ID Number</label>
+                <input type="text" id="id-no" name="id-no" />
+              </div>
+              <div class="gender form-div">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <div class="degree form-div">
+                <label for="degree">Degree</label>
+                <select id="degree" name="degree">
+                  <option value="bse">
+                    BSc.(Hons.) in Software Engineering
+                  </option>
+                  <option value="bcs">BSc.(Hons.) in Computer Science</option>
+                  <option value="bce">
+                    BSc.(Hons.) in Computer Engineering
+                  </option>
+                </select>
+              </div>
+              <div class="year form-div">
+                <label for="year">Year</label>
+                <select id="year" name="year">
+                  <option value="1">1st Year</option>
+                  <option value="2">2nd Year</option>
+                  <option value="3">3rd Year</option>
+                  <option value="4">4th Year</option>
+                </select>
+              </div>
+              <div class="course-list form-div"></div>
+              <div class="update-student-button">
+                <button type="submit">Update Student</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-content">
+          <h4>
+            Copy Right &copy; 2024 | General Sir John Kotelawala Defence
+            University
+          </h4>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

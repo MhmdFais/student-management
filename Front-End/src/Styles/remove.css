@@ -71,7 +71,12 @@ a:visited {
 
 .remove-student-content{
     display: grid;
-    grid-template-rows: 1fr 6fr;
+    grid-template-rows: 1fr 5fr;
+}
+
+.registration-no{
+    display: flex;
+    flex-direction: row;
 }
 
 .remove-student-heading{
@@ -122,9 +127,14 @@ a:visited {
 }
 
 
-.form-div{
+.registration-no{
     display: grid;
-    grid-template-columns: 0.5fr 3fr;
-    padding-bottom: 1rem;
+    grid-template-columns: 0.75fr 3fr 1fr;
+    padding-bottom: 0.5rem;
     align-items: center;
+}
+
+.registration-no i{
+    padding-left: 1rem;
+    font-size: clamp(1rem, 1.5vw, 2.5rem);
 }
