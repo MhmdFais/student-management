@@ -6,6 +6,7 @@
 }
 
 /* ==== HEADER ==== */
+
 .profile,
 .second-set{
     display: flex;
@@ -19,15 +20,14 @@
     font-size: clamp(1.5rem, 2vw, 3rem);
 }
 
+
 /* ==== BODY ==== */
 
-.home-main-body{
-    height: 80vh;
+.view-student-main-body{
+    height: 88vh;
     display: grid;
     grid-template-columns: 1fr 5fr;
 }
-
-
 
 .side-bar{
     display: flex;
@@ -61,9 +61,6 @@
     margin-right: 0.5rem;
 }
 
-
-/* ==== a element default style removing */
-
 a,
 a:active,
 a:visited {
@@ -72,18 +69,17 @@ a:visited {
 }
 
 
-.add-student-main-body{
-    min-height: calc(100vh - 6vh - 6vh);
+.view-student-content{
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 5fr;
 }
 
-.add-student-content{
-    display: grid;
-    grid-template-rows: 1fr 6fr;
+.registration-no{
+    display: flex;
+    flex-direction: row;
 }
 
-.add-student-heading{
+.view-student-heading{
     padding: 3vh 2vw;
     display: flex;
     justify-content: start;
@@ -92,42 +88,57 @@ a:visited {
 
 /* ==== FORM ==== */
 
-.add-student-form{
+.view-student-form{
     display: flex;
     flex-direction: column;
+    gap: 1em;
     padding: 3vh 2vw;
 }
 
-.add-student-form input,
-.add-student-form select{
+.view-student-form label{
+    font-family: var(--main-font);
+    font-size: clamp(0.5rem, 1.2vw, 1rem);
+}
+
+.view-student-form input{
     padding: 0.5rem 1rem;
     font-family: var(--main-font);
+    font-size: clamp(0.5rem, 1.2vw, 1rem);
+    border: 1px solid black;
 }
 
-.add-student-form button{
-    padding: 0.5rem 1rem;
-    font-family: var(--main-font);
-    cursor: pointer;
-    background-color: var(--nav-non-active);
-    border: 1px solid rgb(146, 145, 145);
-}
-
-.add-student-form button:hover{
-    background-color: var(--nav-active);
-}
-
-.add-student-button{
+.view-btn{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 0.5rem;
 }
 
-.form-div{
+.view-student-form button{
+    padding: 0.5rem 2rem;
+    font-family: var(--main-font);
+    font-size: clamp(0.5rem, 1.2vw, 1rem);
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: var(--nav-non-active);
+}
+
+.view-student-form button:hover{
+    background-color: var(--nav-active);
+}
+
+.registration-no{
     display: grid;
-    grid-template-columns: 0.5fr 3fr;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
     padding-bottom: 0.5rem;
     align-items: center;
 }
+
+.registration-no i{
+    padding-left: 1rem;
+    font-size: clamp(1rem, 1.5vw, 2.5rem);
+}
+
 
 
 
