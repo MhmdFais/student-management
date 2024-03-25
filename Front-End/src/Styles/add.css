@@ -129,5 +129,24 @@ a:visited {
     align-items: center;
 }
 
+/* ==== CHECK BOXES ==== */
 
 
+.checkbox-div {
+    display: inline-block;
+    margin-right: 2rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+  
+.course-list {
+    white-space: nowrap; 
+}
+
+.checkbox-div input[type="checkbox"] {
+    transform: scale(1.5); 
+}
+
+.checkbox-div label {
+    margin-left: 5px; 
+}

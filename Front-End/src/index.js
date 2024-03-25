@@ -1,4 +1,4 @@
-import "./Styles/style.css";
+// import "./Styles/style.css";
 
 const courseLists = {
   1: [

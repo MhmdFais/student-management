@@ -22,7 +22,7 @@
 /* ==== BODY ==== */
 
 .home-main-body{
-    height: 88vh;
+    height: 80vh;
     display: grid;
     grid-template-columns: 1fr 5fr;
 }
@@ -71,7 +71,7 @@ a:visited {
 
 
 .update-student-main-body{
-    height: 88vh;
+    min-height: calc(100vh - 6vh - 6vh);;
     display: grid;
     grid-template-columns: 1fr 5fr;
 }
@@ -138,6 +138,30 @@ a:visited {
     padding-left: 1rem;
     font-size: clamp(1rem, 1.5vw, 2.5rem);
 }
+
+
+/* ==== CHECK BOXES ==== */
+
+
+.checkbox-div {
+    display: inline-block;
+    margin-right: 2rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+  
+.course-list {
+    white-space: nowrap; 
+}
+
+.checkbox-div input[type="checkbox"] {
+    transform: scale(1.5); 
+}
+
+.checkbox-div label {
+    margin-left: 5px; 
+}
+
 
 
 
