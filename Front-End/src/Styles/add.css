@@ -27,8 +27,6 @@
     grid-template-columns: 1fr 5fr;
 }
 
-
-
 .side-bar{
     display: flex;
     flex-direction: column;
