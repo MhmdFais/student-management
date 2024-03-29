@@ -1,5 +1,6 @@
 package com.sms.BackEnd.controller;
 
+import com.sms.BackEnd.exception.ExceptionList;
 import com.sms.BackEnd.model.Course;
 import com.sms.BackEnd.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,12 @@ public class CourseController {
 
     @GetMapping("/courses")
     List<Course> getAllCourses(){
-        return courseRepository.findAll();
+        try{
+            return courseRepository.findAll();
+        }
+        catch (Exception e){
+            throw new RuntimeException(ExceptionList.RSP_NOT_FOUND);
+        }
     }
 
     @PutMapping("/course/{courseId}")
