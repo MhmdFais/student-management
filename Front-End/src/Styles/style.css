@@ -77,7 +77,7 @@ body{
     align-items: center;
 }
 
-button{
+.log-btn{
     padding: 0.8rem 2rem;
     font-size: clamp(1rem, 1vw, 1rem);
     background-color: var(--header-footer-bg);

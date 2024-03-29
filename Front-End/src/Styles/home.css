@@ -76,16 +76,38 @@
     font-family: var(--main-font);
 }
 
-.filter-box{
+.filter-box, .refresh-box{
     display: flex;
     flex-direction: row;
     gap: 1em;
     border: 1px solid black;
     padding: 0.5rem 1rem;
+    background-color: var(--nav-non-active);
 }
 
 .filter-text p{
     font-family: var(--main-font);
+}
+
+.home-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.lower-content{
+    padding: 2vh 2vw;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%; 
+}
+  
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
 }
 
 
