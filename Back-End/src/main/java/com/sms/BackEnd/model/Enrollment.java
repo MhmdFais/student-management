@@ -7,11 +7,11 @@ public class Enrollment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private int year;
+    private int semester;
     private int intake;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Student student;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Course course;
 
     public long getId() {
@@ -22,12 +22,12 @@ public class Enrollment {
         this.id = id;
     }
 
-    public int getYear() {
-        return year;
+    public int getSemester() {
+        return semester;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setSemester(int year) {
+        this.semester = year;
     }
 
     public int getIntake() {

@@ -39,7 +39,7 @@ public class StudentController {
         }
     }
 
-    @PutMapping("/student/{regNo}")
+    @PutMapping("/student/update/{regNo}")
     public ResponseEntity<Student> updateStudent(
           @PathVariable(value = "regNo") Long regNo,
             @RequestBody Student studentDetails
@@ -57,7 +57,7 @@ public class StudentController {
             student.setDob(studentDetails.getDob());
             student.setIntake(studentDetails.getIntake());
             student.setDegree(studentDetails.getDegree());
-            student.setYear(studentDetails.getYear());
+            student.setSemester(studentDetails.getSemester());
             student.setCourses(studentDetails.getCourses());
 
             Student updatedStudent = studentRepository.save(student);
@@ -68,7 +68,7 @@ public class StudentController {
         }
     }
 
-    @DeleteMapping("/student/{regNo}")
+    @DeleteMapping("/student/delete/{regNo}")
     public ResponseEntity<Void> deleteStudent(@PathVariable(value = "regNo") Long regNo) {
         try{
             Student student = studentRepository.findById(regNo)

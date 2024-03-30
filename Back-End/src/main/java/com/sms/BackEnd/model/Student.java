@@ -28,9 +28,9 @@ public class Student {
     @Column
     private int intake;
     @Column
-    private int year;
+    private int semester;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(
         name = "student_course",
         joinColumns = @JoinColumn(name = "regNo"),
@@ -38,7 +38,7 @@ public class Student {
     )
     private Set<Course> courses;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private Set<Enrollment> enrollments;
 
     public Long getRegNo() {
@@ -121,12 +121,12 @@ public class Student {
         this.intake = intake;
     }
 
-    public int getYear() {
-        return year;
+    public int getSemester() {
+        return semester;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setSemester(int year) {
+        this.semester = year;
     }
 
     public Set<Course> getCourses() {

@@ -26,5 +26,4 @@ public class EnrollmentController {
         return enrollmentRepository.findAll();
     }
 
-
 }
