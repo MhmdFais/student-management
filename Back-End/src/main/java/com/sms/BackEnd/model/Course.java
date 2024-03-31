@@ -1,8 +1,13 @@
 package com.sms.BackEnd.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.util.Set;
+
 
 @Entity
 public class Course {
@@ -10,10 +15,17 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long courseId;
     private String courseName;
-    @ManyToMany(mappedBy = "courses")
-    private Set<Student> students;
     @OneToMany(mappedBy = "course")
     private Set<Enrollment> enrollments;
+
+    @JsonCreator
+    public Course(@JsonProperty("courseName") String courseName) {
+        this.courseName = courseName;
+    }
+
+    public Course() {
+
+    }
 
     public long getCourseId() {
         return courseId;
@@ -29,14 +41,6 @@ public class Course {
 
     public void setCourseName(String courseName) {
         this.courseName = courseName;
-    }
-
-    public Set<Student> getStudents() {
-        return students;
-    }
-
-    public void setStudents(Set<Student> students) {
-        this.students = students;
     }
 
     public Set<Enrollment> getEnrollments() {

@@ -127,6 +127,7 @@ a:visited {
     align-items: center;
 }
 
+
 /* ==== CHECK BOXES ==== */
 
 
@@ -147,4 +148,12 @@ a:visited {
 
 .checkbox-div label {
     margin-left: 5px; 
+}
+
+/* ==== ERROR MESSAGE ==== */
+
+.error-message p {
+    color: red;
+    font-size: 1rem;
+    font-family: var(--main-font);
 }

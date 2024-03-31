@@ -81,34 +81,46 @@
             <h2>Add Student</h2>
           </div>
           <div class="add-student-form">
-            <form method="">
+            <form>
               <div class="first-name form-div">
                 <label for="first-name">First Name</label>
                 <input type="text" id="first-name" name="first-name" />
+                <div class="error-message"></div>
               </div>
               <div class="last-name form-div">
                 <label for="last-name">Last Name</label>
                 <input type="text" id="last-name" name="last-name" />
+                <div class="error-message"></div>
               </div>
               <div class="phone-no form-div">
                 <label for="phone-no">Phone number</label>
-                <input type="number" id="phone-no" name="phone-no" />
+                <input type="text" id="phone-no" name="phone-no" />
+                <div class="error-message"></div>
               </div>
               <div class="address form-div">
                 <label for="address">Address</label>
-                <input type="text" id="address" name="address" />
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  autocomplete="address-line1"
+                />
+                <div class="error-message"></div>
               </div>
               <div class="birth-day form-div">
                 <label for="birth-day">Birth Day</label>
                 <input type="date" id="birth-day" name="birth-day" />
+                <div class="error-message"></div>
               </div>
               <div class="age form-div">
                 <label for="age">Age</label>
                 <input type="number" id="age" name="age" />
+                <div class="error-message"></div>
               </div>
               <div class="id-no form-div">
                 <label for="id-no">ID Number</label>
                 <input type="text" id="id-no" name="id-no" />
+                <div class="error-message"></div>
               </div>
               <div class="gender form-div">
                 <label for="gender">Gender</label>
@@ -116,6 +128,7 @@
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </select>
+                <div class="error-message"></div>
               </div>
               <div class="degree form-div">
                 <label for="degree">Degree</label>
@@ -128,31 +141,40 @@
                     BSc.(Hons.) in Computer Engineering
                   </option>
                 </select>
+                <div class="error-message"></div>
               </div>
               <div class="intake form-div">
                 <label for="intake">Intake</label>
                 <select id="intake" name="year">
-                  <option value="1">41</option>
-                  <option value="2">40</option>
-                  <option value="3">39</option>
-                  <option value="4">38</option>
+                  <option value="41">41</option>
+                  <option value="40">40</option>
+                  <option value="39">39</option>
+                  <option value="38">38</option>
                 </select>
+                <div class="error-message"></div>
               </div>
               <div class="year form-div">
-                <label for="year">Year</label>
-                <select id="year" name="year">
-                  <option value="1">1st Year</option>
-                  <option value="2">2nd Year</option>
-                  <option value="3">3rd Year</option>
-                  <option value="4">4th Year</option>
+                <label for="semester">Semester</label>
+                <select id="semester" name="semester">
+                  <option value="1">1st Semester</option>
+                  <option value="2">2nd Semester</option>
+                  <option value="3">3rd Semester</option>
+                  <option value="4">4th Semester</option>
+                  <option value="5">5th Semester</option>
+                  <option value="6">6th Semester</option>
+                  <option value="7">7th Semester</option>
+                  <option value="8">8th Semester</option>
                 </select>
+                <div class="error-message"></div>
               </div>
               <div class="course-list form-div">
-                <label for="courses">Courses</label>
-                <div id="course-checkboxes"></div>
+                <label for="course-list">Course</label>
+                <select name="course-list" id="course-list"></select>
               </div>
               <div class="add-student-button">
-                <button type="submit">Add Student</button>
+                <button type="button" class="add-student-btn">
+                  Add Student
+                </button>
               </div>
             </form>
           </div>
@@ -169,6 +191,8 @@
         </div>
       </div>
     </footer>
+    <script src="./add.js"></script>
+    <script src="../../jquery-3.7.1.min.js"></script>
     <script src="../../index.js"></script>
   </body>
 </html>

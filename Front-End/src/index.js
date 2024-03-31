@@ -1,5 +1,3 @@
-// import "./Styles/style.css";
-
 const courseLists = {
   1: [
     "Introduction to Programming",
@@ -20,33 +18,46 @@ const courseLists = {
     "Web Development",
     "Machine Learning",
   ],
+  5: ["Cyber Security", "Big Data", "Cloud Computing", "Blockchain"],
+  6: [
+    "Internet of Things",
+    "Quantum Computing",
+    "Virtual Reality",
+    "Augmented Reality",
+  ],
+  7: [
+    "Embedded Systems",
+    "Computer Vision",
+    "Natural Language Processing",
+    "Robotics",
+  ],
+  8: [
+    "Game Development",
+    "Computer Animation",
+    "Digital Signal Processing",
+    "Computer Vision",
+  ],
 };
 
 function updateCourseList() {
-  const yearSelect = document.getElementById("year");
-  const coursesDiv = document.getElementById("course-checkboxes");
+  const yearSelect = document.getElementById("semester");
+  const courseSelect = document.getElementById("course-list");
   const selectedYear = yearSelect.value;
-  coursesDiv.innerHTML = ""; // Clear existing checkboxes
 
-  // Populate checkboxes based on selected year
-  courseLists[selectedYear].forEach((course) => {
-    const checkboxDiv = document.createElement("div");
-    checkboxDiv.classList.add("checkbox-div");
+  // Clear existing options
+  courseSelect.innerHTML = "";
 
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.value = course;
-    checkbox.name = "courses[]";
-
-    const label = document.createElement("label");
-    label.textContent = course;
-
-    checkboxDiv.appendChild(checkbox);
-    checkboxDiv.appendChild(label);
-    coursesDiv.appendChild(checkboxDiv);
+  // Populate options based on selected year
+  courseLists[selectedYear].forEach((course, index) => {
+    const option = document.createElement("option");
+    option.value = course;
+    option.textContent = course;
+    courseSelect.appendChild(option);
   });
 }
 
 updateCourseList();
 
-document.getElementById("year").addEventListener("change", updateCourseList);
+document
+  .getElementById("semester")
+  .addEventListener("change", updateCourseList);

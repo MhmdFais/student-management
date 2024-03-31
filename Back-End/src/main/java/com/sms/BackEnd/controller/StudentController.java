@@ -9,27 +9,18 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+@CrossOrigin
 @RestController
 public class StudentController {
     @Autowired
     private StudentRepository studentRepository;
 
-    @PostMapping("/student")
+    @PostMapping("/student/add")
     Student newStudent(@RequestBody Student newStudent){
-       try{
-           Student alreadyExists = studentRepository.findBynicNo(newStudent.getNicNo());
-           if(alreadyExists != null){
-               throw new RuntimeException(ExceptionList.RSP_STUDENT_ALREADY_EXISTS);
-           }
-           return studentRepository.save(newStudent);
-       }
-       catch (Exception e){
-           throw new RuntimeException(ExceptionList.RSP_INTERNAL_ERROR);
-       }
+        return studentRepository.save(newStudent);
     }
 
-    @GetMapping("/students")
+    @GetMapping("/student/get")
     List<Student> getAllStudents(){
         try{
             return studentRepository.findAll();
@@ -41,7 +32,7 @@ public class StudentController {
 
     @PutMapping("/student/update/{regNo}")
     public ResponseEntity<Student> updateStudent(
-          @PathVariable(value = "regNo") Long regNo,
+            @PathVariable(value = "regNo") Long regNo,
             @RequestBody Student studentDetails
     ){
         try{
@@ -55,10 +46,11 @@ public class StudentController {
             student.setNicNo(studentDetails.getNicNo());
             student.setGender(studentDetails.getGender());
             student.setDob(studentDetails.getDob());
+            student.setAge(studentDetails.getAge());
             student.setIntake(studentDetails.getIntake());
             student.setDegree(studentDetails.getDegree());
             student.setSemester(studentDetails.getSemester());
-            student.setCourses(studentDetails.getCourses());
+            student.setCourse(studentDetails.getCourse());
 
             Student updatedStudent = studentRepository.save(student);
             return ResponseEntity.ok(updatedStudent);

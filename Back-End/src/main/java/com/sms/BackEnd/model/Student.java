@@ -1,8 +1,13 @@
 package com.sms.BackEnd.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.sql.Date;
 import java.util.Set;
+
 
 @Entity
 public class Student {
@@ -14,32 +19,44 @@ public class Student {
     @Column
     private String lastName;
     @Column
-    private int phoneNo;
+    private String phoneNo;
     @Column
     private String address;
-    @Column(unique = true)
-    private int nicNo;
+    @Column
+    private String nicNo;
     @Column
     private String gender;
     @Column
     private String dob;
     @Column
+    private String age;
+    @Column
     private String degree;
     @Column
-    private int intake;
+    private String intake;
     @Column
-    private int semester;
-
-    @ManyToMany(cascade = CascadeType.PERSIST)
-    @JoinTable(
-        name = "student_course",
-        joinColumns = @JoinColumn(name = "regNo"),
-        inverseJoinColumns = @JoinColumn(name = "courseId")
-    )
-    private Set<Course> courses;
+    private String semester;
+    @Column
+    private String course;
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private Set<Enrollment> enrollments;
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
+    }
 
     public Long getRegNo() {
         return regNo;
@@ -65,11 +82,11 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public int getPhoneNo() {
+    public String getPhoneNo() {
         return phoneNo;
     }
 
-    public void setPhoneNo(int phoneNo) {
+    public void setPhoneNo(String phoneNo) {
         this.phoneNo = phoneNo;
     }
 
@@ -81,11 +98,11 @@ public class Student {
         this.address = address;
     }
 
-    public int getNicNo() {
+    public String getNicNo() {
         return nicNo;
     }
 
-    public void setNicNo(int nicNo) {
+    public void setNicNo(String nicNo) {
         this.nicNo = nicNo;
     }
 
@@ -113,29 +130,23 @@ public class Student {
         this.degree = degree;
     }
 
-    public int getIntake() {
+    public String getIntake() {
         return intake;
     }
 
-    public void setIntake(int intake) {
+    public void setIntake(String intake) {
         this.intake = intake;
     }
 
-    public int getSemester() {
+    public String getSemester() {
         return semester;
     }
 
-    public void setSemester(int year) {
+    public void setSemester(String year) {
         this.semester = year;
     }
 
-    public Set<Course> getCourses() {
-        return courses;
-    }
 
-    public void setCourses(Set<Course> courses) {
-        this.courses = courses;
-    }
 
     public Set<Enrollment> getEnrollments() {
         return enrollments;
