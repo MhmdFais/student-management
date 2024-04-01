@@ -6,36 +6,22 @@ import jakarta.persistence.*;
 public class Enrollment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private int semester;
-    private int intake;
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Student student;
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Course course;
+    private Long id;
 
-    public long getId() {
+    @ManyToOne
+    @JoinColumn(name = "student_id")
+    private Student student;
+
+    private String semester;
+    private String intake;
+    private String course;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
-    }
-
-    public int getSemester() {
-        return semester;
-    }
-
-    public void setSemester(int year) {
-        this.semester = year;
-    }
-
-    public int getIntake() {
-        return intake;
-    }
-
-    public void setIntake(int intake) {
-        this.intake = intake;
     }
 
     public Student getStudent() {
@@ -46,11 +32,27 @@ public class Enrollment {
         this.student = student;
     }
 
-    public Course getCourse() {
+    public String getSemester() {
+        return semester;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
+    }
+
+    public String getIntake() {
+        return intake;
+    }
+
+    public void setIntake(String intake) {
+        this.intake = intake;
+    }
+
+    public String getCourse() {
         return course;
     }
 
-    public void setCourse(Course course) {
+    public void setCourse(String course) {
         this.course = course;
     }
 }
