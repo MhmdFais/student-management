@@ -1,13 +1,16 @@
 package com.sms.BackEnd.controller;
 
 import com.sms.BackEnd.exception.ExceptionList;
+import com.sms.BackEnd.model.Enrollment;
 import com.sms.BackEnd.model.Student;
 import com.sms.BackEnd.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @CrossOrigin
 @RestController
@@ -16,8 +19,13 @@ public class StudentController {
     private StudentRepository studentRepository;
 
     @PostMapping("/student/add")
-    Student newStudent(@RequestBody Student newStudent){
-        return studentRepository.save(newStudent);
+    public ResponseEntity<Student> newStudent(@RequestBody Student newStudent) {
+        try {
+            Student savedStudent = studentRepository.save(newStudent);
+            return ResponseEntity.ok(savedStudent);
+        } catch (Exception e) {
+            throw new RuntimeException(ExceptionList.RSP_INTERNAL_ERROR);
+        }
     }
 
     @GetMapping("/student/get")
@@ -54,6 +62,7 @@ public class StudentController {
             student.setCourseTwo(studentDetails.getCourseTwo());
             student.setCourseThree(studentDetails.getCourseThree());
 
+
             Student updatedStudent = studentRepository.save(student);
             return ResponseEntity.ok(updatedStudent);
         }
@@ -65,8 +74,10 @@ public class StudentController {
     @DeleteMapping("/student/delete/{regNo}")
     public ResponseEntity<Void> deleteStudent(@PathVariable(value = "regNo") Long regNo) {
         try{
+
             Student student = studentRepository.findById(regNo)
                     .orElseThrow(() -> new RuntimeException(ExceptionList.RSP_STUDENT_NOT_FOUND));
+
 
             studentRepository.delete(student);
             return ResponseEntity.noContent().build();
@@ -80,8 +91,11 @@ public class StudentController {
     @GetMapping("/student/get/{regNo}")
     public ResponseEntity<Student> getStudent(@PathVariable(value = "regNo") Long regNo){
         try{
+
             Student student = studentRepository.findById(regNo)
                     .orElseThrow(() -> new RuntimeException(ExceptionList.RSP_STUDENT_NOT_FOUND));
+
+
             return ResponseEntity.ok().body(student);
         }
         catch (Exception e){

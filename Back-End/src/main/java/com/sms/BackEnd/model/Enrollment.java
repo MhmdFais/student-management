@@ -9,12 +9,22 @@ public class Enrollment {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "student_id")
+    @JoinColumn(name = "reg_no", referencedColumnName = "regNo")
     private Student student;
 
+    @Column
     private String semester;
+    @Column
     private String intake;
-    private String course;
+
+    @Column
+    private String courseOne;
+
+    @Column
+    private String courseTwo;
+
+    @Column
+    private String courseThree;
 
     public Long getId() {
         return id;
@@ -48,11 +58,27 @@ public class Enrollment {
         this.intake = intake;
     }
 
-    public String getCourse() {
-        return course;
+    public String getCourseOne() {
+        return courseOne;
     }
 
-    public void setCourse(String course) {
-        this.course = course;
+    public void setCourseOne(String courseOne) {
+        this.courseOne = courseOne;
+    }
+
+    public String getCourseTwo() {
+        return courseTwo;
+    }
+
+    public void setCourseTwo(String courseTwo) {
+        this.courseTwo = courseTwo;
+    }
+
+    public String getCourseThree() {
+        return courseThree;
+    }
+
+    public void setCourseThree(String courseThree) {
+        this.courseThree = courseThree;
     }
 }
