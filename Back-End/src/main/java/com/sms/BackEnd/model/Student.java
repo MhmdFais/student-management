@@ -36,11 +36,44 @@ public class Student {
     private String intake;
     @Column
     private String semester;
+
     @Column
-    private String course;
+    private String courseOne;
+
+    @Column
+    private String courseTwo;
+
+    @Column
+    private String courseThree;
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private Set<Enrollment> enrollments;
+
+    public String getCourseOne() {
+        return courseOne;
+    }
+
+    public void setCourseOne(String courseOne) {
+        this.courseOne = courseOne;
+    }
+
+    public String getCourseTwo() {
+        return courseTwo;
+    }
+
+    public void setCourseTwo(String courseTwo) {
+        this.courseTwo = courseTwo;
+    }
+
+
+    public String getCourseThree() {
+        return courseThree;
+    }
+
+    public void setCourseThree(String courseThree) {
+        this.courseThree = courseThree;
+    }
+
 
     public String getAge() {
         return age;
@@ -48,14 +81,6 @@ public class Student {
 
     public void setAge(String age) {
         this.age = age;
-    }
-
-    public String getCourse() {
-        return course;
-    }
-
-    public void setCourse(String course) {
-        this.course = course;
     }
 
     public Long getRegNo() {

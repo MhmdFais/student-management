@@ -50,7 +50,9 @@ public class StudentController {
             student.setIntake(studentDetails.getIntake());
             student.setDegree(studentDetails.getDegree());
             student.setSemester(studentDetails.getSemester());
-            student.setCourse(studentDetails.getCourse());
+            student.setCourseOne(studentDetails.getCourseOne());
+            student.setCourseTwo(studentDetails.getCourseTwo());
+            student.setCourseThree(studentDetails.getCourseThree());
 
             Student updatedStudent = studentRepository.save(student);
             return ResponseEntity.ok(updatedStudent);
