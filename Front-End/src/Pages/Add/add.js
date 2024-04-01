@@ -12,7 +12,9 @@ function userInput() {
   let degree = document.getElementById("degree").value;
   let intake = document.getElementById("intake").value;
   let semester = document.getElementById("semester").value;
-  let course = document.getElementById("course-list").value;
+  let courseOne = document.getElementById("course-list-one").value;
+  let courseTwo = document.getElementById("course-list-two").value;
+  let courseThree = document.getElementById("course-list-three").value;
 
   //validate input fields
   ValidityState(
@@ -23,7 +25,9 @@ function userInput() {
     birthday,
     age,
     idNumber,
-    course
+    courseOne,
+    courseTwo,
+    courseThree
   );
 
   sendDataToServer(
@@ -38,7 +42,9 @@ function userInput() {
     degree,
     intake,
     semester,
-    course
+    courseOne,
+    courseTwo,
+    courseThree
   );
 
   //print the input fields
@@ -54,7 +60,9 @@ function userInput() {
     degree,
     intake,
     semester,
-    course
+    courseOne,
+    courseTwo,
+    courseThree
   );
 
   clearInputFields();
@@ -72,7 +80,9 @@ function PrintFields(
   degree,
   intake,
   semester,
-  course
+  courseOne,
+  courseTwo,
+  courseThree
 ) {
   console.log("First Name: " + firstName);
   console.log("Last Name: " + lastName);
@@ -85,7 +95,9 @@ function PrintFields(
   console.log("Degree: " + degree);
   console.log("Intake: " + intake);
   console.log("Semester: " + semester);
-  console.log("Course: " + course);
+  console.log("CourseOne: " + courseOne);
+  console.log("CourseTwo: " + courseTwo);
+  console.log("CourseThree: " + courseThree);
 }
 
 function clearInputFields() {
@@ -152,7 +164,9 @@ function sendDataToServer(
   degree,
   intake,
   semester,
-  course
+  courseOne,
+  courseTwo,
+  courseThree
 ) {
   if (
     firstName !== "" &&
@@ -181,16 +195,18 @@ function sendDataToServer(
       body: JSON.stringify({
         firstName: firstName,
         lastName: lastName,
-        phoneNumber: phoneNumber,
+        phoneNo: phoneNumber,
         address: address,
-        birthday: birthday,
+        dob: birthday,
         age: age,
-        idNumber: idNumber,
+        nicNo: idNumber,
         gender: gender,
         degree: degree,
         intake: intake,
         semester: semester,
-        course: course,
+        courseOne: courseOne,
+        courseTwo: courseTwo,
+        courseThree: courseThree,
       }),
     })
       .then((response) => {

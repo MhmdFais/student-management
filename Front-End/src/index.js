@@ -39,9 +39,9 @@ const courseLists = {
   ],
 };
 
-function updateCourseList() {
+function updateCourseListOne() {
   const yearSelect = document.getElementById("semester");
-  const courseSelect = document.getElementById("course-list");
+  const courseSelect = document.getElementById("course-list-one");
   const selectedYear = yearSelect.value;
 
   // Clear existing options
@@ -56,8 +56,46 @@ function updateCourseList() {
   });
 }
 
-updateCourseList();
+function updateCourseListTwo() {
+  const yearSelect = document.getElementById("semester");
+  const courseSelect = document.getElementById("course-list-two");
+  const selectedYear = yearSelect.value;
 
-document
-  .getElementById("semester")
-  .addEventListener("change", updateCourseList);
+  // Clear existing options
+  courseSelect.innerHTML = "";
+
+  // Populate options based on selected year
+  courseLists[selectedYear].forEach((course, index) => {
+    const option = document.createElement("option");
+    option.value = course;
+    option.textContent = course;
+    courseSelect.appendChild(option);
+  });
+}
+
+function updateCourseListThree() {
+  const yearSelect = document.getElementById("semester");
+  const courseSelect = document.getElementById("course-list-three");
+  const selectedYear = yearSelect.value;
+
+  // Clear existing options
+  courseSelect.innerHTML = "";
+
+  // Populate options based on selected year
+  courseLists[selectedYear].forEach((course, index) => {
+    const option = document.createElement("option");
+    option.value = course;
+    option.textContent = course;
+    courseSelect.appendChild(option);
+  });
+}
+
+updateCourseListOne();
+updateCourseListTwo();
+updateCourseListThree();
+
+document.getElementById("semester").addEventListener("change", function () {
+  updateCourseListOne();
+  updateCourseListTwo();
+  updateCourseListThree();
+});

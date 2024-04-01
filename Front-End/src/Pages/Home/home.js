@@ -1,14 +1,12 @@
-let refreshButton = document.querySelector(". refresh-btn");
-
-refreshButton.addEventListener("click", () => {
-  getStudentData();
-});
+document.addEventListener("DOMContentLoaded", getStudentData);
 
 function getStudentData() {
   fetch("http://localhost:8080/student/get")
     .then((response) => response.json())
     .then((data) => {
+      clearTable();
       data.forEach((student) => {
+        let regNo = student.regNo;
         let firstName = student.firstName;
         let lastName = student.lastName;
         let phoneNumber = student.phoneNo;
@@ -20,21 +18,20 @@ function getStudentData() {
         let degree = student.degree;
         let intake = student.intake;
         let semester = student.semester;
-        let course = student.course;
+        let courseOne = student.courseOne;
+        let courseTwo = student.courseTwo;
+        let courseThree = student.courseThree;
 
         createRow(
+          regNo,
           firstName,
           lastName,
           phoneNumber,
-          address,
           birthday,
           age,
-          idNumber,
           gender,
           degree,
-          intake,
-          semester,
-          course
+          intake
         );
       });
     })
@@ -44,26 +41,28 @@ function getStudentData() {
     });
 }
 
+function clearTable() {
+  const tableBody = document.getElementById("table-body");
+  tableBody.innerHTML = "";
+}
+
 function createRow(
+  regNo,
   firstName,
   lastName,
   phoneNumber,
-  address,
   birthday,
   age,
-  idNumber,
   gender,
   degree,
-  intake,
-  semester,
-  course
+  intake
 ) {
   const tableBody = document.getElementById("table-body");
 
   const newRow = document.createElement("tr");
 
   const regNoCell = document.createElement("td");
-  regNoCell.textContent = "";
+  regNoCell.textContent = regNo;
   newRow.appendChild(regNoCell);
 
   const firstNameCell = document.createElement("td");
@@ -78,21 +77,9 @@ function createRow(
   phoneNumberCell.textContent = phoneNumber;
   newRow.appendChild(phoneNumberCell);
 
-  const addressCell = document.createElement("td");
-  addressCell.textContent = address;
-  newRow.appendChild(addressCell);
-
-  const birthdayCell = document.createElement("td");
-  birthdayCell.textContent = birthday;
-  newRow.appendChild(birthdayCell);
-
   const ageCell = document.createElement("td");
   ageCell.textContent = age;
   newRow.appendChild(ageCell);
-
-  const idNumberCell = document.createElement("td");
-  idNumberCell.textContent = idNumber;
-  newRow.appendChild(idNumberCell);
 
   const genderCell = document.createElement("td");
   genderCell.textContent = gender;
@@ -102,17 +89,13 @@ function createRow(
   degreeCell.textContent = degree;
   newRow.appendChild(degreeCell);
 
+  const birthdayCell = document.createElement("td");
+  birthdayCell.textContent = birthday;
+  newRow.appendChild(birthdayCell);
+
   const intakeCell = document.createElement("td");
   intakeCell.textContent = intake;
   newRow.appendChild(intakeCell);
-
-  const semesterCell = document.createElement("td");
-  semesterCell.textContent = semester;
-  newRow.appendChild(semesterCell);
-
-  const courseCell = document.createElement("td");
-  courseCell.textContent = course;
-  newRow.appendChild(courseCell);
 
   tableBody.appendChild(newRow);
 }
