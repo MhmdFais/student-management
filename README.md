@@ -73,15 +73,11 @@ npm install
 - **PUT /students/update/:id**: Update student by ID.
 - **DELETE /student/delete/:id**: Delete student by ID.
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-# Author
+## Author
 
 - [Muhammad Fais](https://github.com/MhmdFais)
 
-# Acknowledgements
+## Acknowledgements
 
 - [W3Schools](https://www.w3schools.com/)
 - [MDN Web Docs](https://developer.mozilla.org/en-US/)
