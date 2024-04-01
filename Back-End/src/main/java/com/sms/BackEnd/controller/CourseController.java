@@ -40,7 +40,6 @@ public class CourseController {
                 .orElseThrow();
 
         course.setCourseName(courseDetails.getCourseName());
-        course.setEnrollments(courseDetails.getEnrollments());
 
         Course updatedCourse = courseRepository.save(course);
         return ResponseEntity.ok(updatedCourse);

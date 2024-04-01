@@ -47,7 +47,7 @@ public class Student {
     @Column
     private String courseThree;
 
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Enrollment> enrollments = new HashSet<>();
 
     public Set<Enrollment> getEnrollments() {

@@ -15,8 +15,7 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long courseId;
     private String courseName;
-    @OneToMany(mappedBy = "course")
-    private Set<Enrollment> enrollments;
+
 
     @JsonCreator
     public Course(@JsonProperty("courseName") String courseName) {
@@ -43,11 +42,4 @@ public class Course {
         this.courseName = courseName;
     }
 
-    public Set<Enrollment> getEnrollments() {
-        return enrollments;
-    }
-
-    public void setEnrollments(Set<Enrollment> enrollments) {
-        this.enrollments = enrollments;
-    }
 }
