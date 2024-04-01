@@ -129,7 +129,7 @@ a:visited {
 
 .reg-no-search{
     display: grid;
-    grid-template-columns: 0.75fr 3fr 1fr;
+    grid-template-columns: 0.93fr 3fr 1fr 1fr;
     padding-bottom: 0.5rem;
     align-items: center;
 }

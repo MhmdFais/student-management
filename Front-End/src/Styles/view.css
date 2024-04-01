@@ -69,10 +69,6 @@ a:visited {
 }
 
 
-.view-student-content{
-    display: grid;
-    grid-template-rows: 1fr 5fr;
-}
 
 .registration-no{
     display: flex;
@@ -139,6 +135,16 @@ a:visited {
     font-size: clamp(1rem, 1.5vw, 2.5rem);
 }
 
+.student-details{
+    padding-left: 2vw;
+}
+
+
+.student-details{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
 
 
 

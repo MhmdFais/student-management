@@ -1,31 +1,50 @@
-let studentRegisterNumber = document.getElementById("reg-no").value;
 let deleteButton = document.querySelector(".delte-btn");
 
 deleteButton.addEventListener("click", () => {
-  //validate input field
-  if (studentRegisterNumber === "") {
-    alert(
-      "Please enter the student register number to delete the student record"
-    );
-  } else {
-    //send data to server
-    sendDataToServer(studentRegisterNumber);
-  }
+  event.preventDefault();
+  deleteStudent();
 });
 
-function sendDataToServer(studentRegisterNumber) {
-  fetch("http://localhost:8080/student/delete/${studentRegisterNumber}", {
+function deleteStudent() {
+  let studentRegisterNumber = document.getElementById("reg-no").value;
+  if (validate(studentRegisterNumber)) {
+    let regNo = parseInt(studentRegisterNumber);
+    console.log(typeof regNo);
+    sendDataToServer(regNo);
+  } else {
+    alert("Please enter a valid student register number");
+  }
+}
+
+function validate(studentRegisterNumber) {
+  if (studentRegisterNumber === "") {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function sendDataToServer(regNo) {
+  fetch(`http://localhost:8080/student/delete/${regNo}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      studentRegisterNumber: studentRegisterNumber,
+      studentRegisterNumber: regNo,
     }),
   })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      alert(data.message);
+    .then((res) => {
+      if (res.ok) {
+        alert("Student deletion successful");
+      } else {
+        alert("Student not found");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert(
+        "An error occurred while deleting the student. Please try again later."
+      );
     });
 }

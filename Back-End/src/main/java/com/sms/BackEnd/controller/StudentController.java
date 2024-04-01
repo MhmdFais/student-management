@@ -75,4 +75,17 @@ public class StudentController {
             throw new RuntimeException(ExceptionList.RSP_INTERNAL_ERROR);
         }
     }
+
+    //get the particular student
+    @GetMapping("/student/get/{regNo}")
+    public ResponseEntity<Student> getStudent(@PathVariable(value = "regNo") Long regNo){
+        try{
+            Student student = studentRepository.findById(regNo)
+                    .orElseThrow(() -> new RuntimeException(ExceptionList.RSP_STUDENT_NOT_FOUND));
+            return ResponseEntity.ok().body(student);
+        }
+        catch (Exception e){
+            throw new RuntimeException(ExceptionList.RSP_INTERNAL_ERROR);
+        }
+    }
 }

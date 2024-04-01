@@ -84,8 +84,11 @@
             <form method="">
               <div class="reg-no-search">
                 <label for="reg-no">Registration Number</label>
-                <input type="text" id="reg-no" name="reg-no" />
+                <input type="text" id="reg-no" name="reg-no" placeholder="" />
                 <i class="fa fa-search" aria-hidden="true"></i>
+                <div class="search-btn">
+                  <button type="submit">Search</button>
+                </div>
               </div>
               <div class="first-name form-div">
                 <label for="first-name">First Name</label>
@@ -135,6 +138,16 @@
                 </select>
               </div>
               <div class="intake form-div">
+                <label for="intake">Intake</label>
+                <select id="intake" name="year">
+                  <option value="41">41</option>
+                  <option value="40">40</option>
+                  <option value="39">39</option>
+                  <option value="38">38</option>
+                </select>
+                <div class="error-message"></div>
+              </div>
+              <div class="intake form-div">
                 <label for="semester">Semester</label>
                 <select id="semester" name="semester">
                   <option value="1">1st Semester</option>
@@ -181,5 +194,7 @@
       </div>
     </footer>
     <script src="../../index.js"></script>
+    <script src="./update.js"></script>
+    <script src="../../jquery-3.7.1.min.js"></script>
   </body>
 </html>
