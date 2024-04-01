@@ -31,29 +31,41 @@ function populateStudentDetails(student) {
   const studentDetailsContainer = document.querySelector(".student-details");
   studentDetailsContainer.innerHTML = "";
 
-  const studentDetailsHTML = `
-    <p><strong>First Name:</strong> ${student.firstName}</p>
-    <p><strong>Last Name:</strong> ${student.lastName}</p>
-    <p><strong>Phone Number:</strong> ${student.phoneNo}</p>
-    <p><strong>Address:</strong> ${student.address}</p>
-    <p><strong>Date of Birth:</strong> ${student.dob}</p>
-    <p><strong>Age:</strong> ${student.age}</p>
-    <p><strong>ID Number:</strong> ${student.nicNo}</p>
-    <p><strong>Gender:</strong> ${student.gender}</p>
-    <p><strong>Degree:</strong> ${student.degree}</p>
-    <p><strong>Intake:</strong> ${student.intake}</p>
-    <p><strong>Semester:</strong> ${student.semester}</p>
-    <h3>Course History</h3>
-    <ul>
-      ${student.enrollments
-        .map(
-          (enrollment) => `
-        <li><strong>Semester:</strong> ${enrollment.semester}, <strong>Intake:</strong> ${enrollment.intake}, <strong>Course:</strong> ${enrollment.course}</li>
-      `
-        )
-        .join("")}
-    </ul>
-  `;
+  console.log("Student object:", student);
 
-  studentDetailsContainer.innerHTML = studentDetailsHTML;
+  if (student.enrollments) {
+    console.log("Enrollments:", student.enrollments);
+    student.enrollments.forEach((enrollment) => {
+      console.log("Course:", enrollment.course);
+      console.log("Semester:", enrollment.semester);
+      console.log("Intake:", enrollment.intake);
+    });
+  } else {
+    console.log("No enrollments found");
+  }
+
+  studentDetailsContainer.innerHTML += `
+  <h3>Student Details</h3>
+  <p>Registration Number: ${student.regNo}</p>
+  <p>Name: ${student.firstName} ${student.lastName}</p>
+  <p>Phone Number: ${student.phoneNo}</p>
+  <p>Address: ${student.address}</p>
+  <p>Date of Birth: ${student.dob}</p>
+  <p>Age: ${student.age}</p>
+  <p>ID Number: ${student.nicNo}</p>
+  <p>Gender: ${student.gender}</p>
+  <p>Degree: ${student.degree}</p>
+  <p>Intake: ${student.intake}</p>
+  <p>Semester: ${student.semester}</p>
+  <p>Course One: ${student.courseOne}</p>
+  <p>Course Two: ${student.courseTwo}</p>
+  <p>Course Three: ${student.courseThree}</p>
+`;
+
+  let enrollmentHTML = "<h3>Enrolled Courses</h3>";
+  student.enrollments.forEach((enrollment) => {
+    enrollmentHTML += `<p>Semester: ${enrollment.semester}, Intake: ${enrollment.intake}, Course: ${enrollment.course}</p>`;
+  });
+
+  studentDetailsContainer.innerHTML += enrollmentHTML;
 }
