@@ -24,7 +24,7 @@
 /* ==== BODY ==== */
 
 .view-student-main-body{
-    height: 88vh;
+    min-height: 88vh;
     display: grid;
     grid-template-columns: 1fr 5fr;
 }
@@ -67,7 +67,6 @@ a:visited {
     color: inherit; 
     text-decoration: none; 
 }
-
 
 
 .registration-no{
@@ -138,7 +137,6 @@ a:visited {
 .student-details{
     padding-left: 2vw;
 }
-
 
 .student-details{
     display: flex;
