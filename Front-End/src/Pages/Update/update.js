@@ -109,7 +109,7 @@ function updateStudentDetails() {
       if (res.ok) {
         alert("Student details updated successfully");
       } else {
-        alert("Failed to update student details. Please try again later.");
+        alert("Failed to update student details");
       }
     })
     .catch((error) => {
