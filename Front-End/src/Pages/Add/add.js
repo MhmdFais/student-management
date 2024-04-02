@@ -1,5 +1,9 @@
 let saveEmployeeButton = document.querySelector(".add-student-button");
 
+saveEmployeeButton.addEventListener("click", () => {
+  userInput();
+});
+
 function userInput() {
   let firstName = document.getElementById("first-name").value;
   let lastName = document.getElementById("last-name").value;
@@ -16,88 +20,39 @@ function userInput() {
   let courseTwo = document.getElementById("course-list-two").value;
   let courseThree = document.getElementById("course-list-three").value;
 
-  //validate input fields
-  ValidityState(
-    firstName,
-    lastName,
-    phoneNumber,
-    address,
-    birthday,
-    age,
-    idNumber,
-    courseOne,
-    courseTwo,
-    courseThree
-  );
-
-  sendDataToServer(
-    firstName,
-    lastName,
-    phoneNumber,
-    address,
-    birthday,
-    age,
-    idNumber,
-    gender,
-    degree,
-    intake,
-    semester,
-    courseOne,
-    courseTwo,
-    courseThree
-  );
-
-  //print the input fields
-  PrintFields(
-    firstName,
-    lastName,
-    phoneNumber,
-    address,
-    birthday,
-    age,
-    idNumber,
-    gender,
-    degree,
-    intake,
-    semester,
-    courseOne,
-    courseTwo,
-    courseThree
-  );
+  if (
+    ValidityState(
+      firstName,
+      lastName,
+      phoneNumber,
+      address,
+      birthday,
+      age,
+      idNumber,
+      courseOne,
+      courseTwo,
+      courseThree
+    )
+  ) {
+    sendDataToServer(
+      firstName,
+      lastName,
+      phoneNumber,
+      address,
+      birthday,
+      age,
+      idNumber,
+      gender,
+      degree,
+      intake,
+      semester,
+      courseOne,
+      courseTwo,
+      courseThree
+    );
+  }
 
   clearInputFields();
-}
-
-function PrintFields(
-  firstName,
-  lastName,
-  phoneNumber,
-  address,
-  birthday,
-  age,
-  idNumber,
-  gender,
-  degree,
-  intake,
-  semester,
-  courseOne,
-  courseTwo,
-  courseThree
-) {
-  console.log("First Name: " + firstName);
-  console.log("Last Name: " + lastName);
-  console.log("Phone Number: " + phoneNumber);
-  console.log("Address: " + address);
-  console.log("Birthday: " + birthday);
-  console.log("Age: " + age);
-  console.log("ID Number: " + idNumber);
-  console.log("Gender :" + gender);
-  console.log("Degree: " + degree);
-  console.log("Intake: " + intake);
-  console.log("Semester: " + semester);
-  console.log("CourseOne: " + courseOne);
-  console.log("CourseTwo: " + courseTwo);
-  console.log("CourseThree: " + courseThree);
 }
 
 function clearInputFields() {
@@ -121,35 +76,36 @@ function ValidityState(
 ) {
   if (firstName === "") {
     alert("First Name is required");
+    return false;
   } else if (lastName === "") {
     alert("Last Name is required");
+    return false;
   } else if (phoneNumber === "") {
     alert("Phone Number is required");
+    return false;
   } else if (phoneNumber.length > 10 || phoneNumber.length < 9) {
     alert("Phone Number is invalid (Should be 10 digits)");
+    return false;
   } else if (address === "") {
     alert("Address is required");
+    return false;
   } else if (birthday === "") {
     alert("Birthday is required");
+    return false;
   } else if (age === "") {
     alert("Age is required");
+    return false;
   } else if (age < 18 || age > 30) {
     alert("Age is invalid (Should be between 18 and 30)");
+    return false;
   } else if (idNumber === "") {
     alert("ID Number is required");
+    return false;
   } else if (idNumber.length !== 12) {
     alert("ID Number is invalid (Should be 12 digits)");
+    return false;
   }
-}
-
-function errorMessage(message) {
-  const errorDiv = document.querySelector(".error-message");
-  const errorMessage = document.createElement("p");
-  errorMessage.textContent = message;
-  errorDiv.appendChild(errorMessage);
-  setTimeout(() => {
-    errorMessage.remove();
-  }, 1000);
+  return true;
 }
 
 function sendDataToServer(
@@ -168,19 +124,7 @@ function sendDataToServer(
   courseTwo,
   courseThree
 ) {
-  if (
-    firstName !== "" &&
-    lastName !== "" &&
-    phoneNumber !== "" &&
-    phoneNumber.length === 10 &&
-    address !== "" &&
-    birthday !== "" &&
-    age !== "" &&
-    age >= 18 &&
-    age <= 30 &&
-    idNumber !== "" &&
-    idNumber.length === 12
-  ) {
+  {
     console.log("sendind date" + birthday);
     console.log("sendind nic" + idNumber);
     console.log("sendind phone" + phoneNumber);
@@ -221,12 +165,5 @@ function sendDataToServer(
         console.log(error);
         alert("An error occurred");
       });
-  } else {
-    //alert("Please fill all required fields");
-    console.log("Please fill all required fields");
   }
 }
-
-saveEmployeeButton.addEventListener("click", () => {
-  userInput();
-});

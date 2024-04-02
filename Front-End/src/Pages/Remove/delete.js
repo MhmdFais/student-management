@@ -9,7 +9,6 @@ function deleteStudent() {
   let studentRegisterNumber = document.getElementById("reg-no").value;
   if (validate(studentRegisterNumber)) {
     let regNo = parseInt(studentRegisterNumber);
-    console.log(typeof regNo);
     sendDataToServer(regNo);
   } else {
     alert("Please enter a valid student register number");

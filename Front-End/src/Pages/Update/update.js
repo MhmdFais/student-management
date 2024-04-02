@@ -15,8 +15,6 @@ function updateStudent() {
   let studentRegisterNumber = document.getElementById("reg-no").value;
   if (validate(studentRegisterNumber)) {
     let regNo = parseInt(studentRegisterNumber);
-    console.log(regNo);
-    console.log(typeof regNo);
     fetchStudentDetails(regNo);
   } else {
     alert("Please enter a valid student register number");
@@ -61,11 +59,8 @@ function populateForm(student) {
   document.getElementById("intake").value = student.intake;
   document.getElementById("semester").value = student.semester;
   document.getElementById("course-list-one").value = student.courseOne;
-  console.log(student.courseOne);
   document.getElementById("course-list-two").value = student.courseTwo;
-  console.log(student.courseTwo);
   document.getElementById("course-list-three").value = student.courseThree;
-  console.log(student.courseThree);
 }
 
 function updateStudentDetails() {
